@@ -1,3 +1,8 @@
 /posts/node_modules
 
 /comments/node_modules
+
+/query/node_modules
+
+/eventBus/node_modules
+
