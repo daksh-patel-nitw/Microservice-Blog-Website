@@ -20,15 +20,16 @@ app.post('/posts/:id/comments', async (req, res) => {
     const { content } = req.body;
 
     const comments = commentsByPostId[contentId] || [];
-    comments.push({ id: commentId, content });
+    comments.push({ id: commentId, content,status:'pending' });
     commentsByPostId[contentId] = comments;
-    
+
     await axios.post('http://localhost:4005/events', {
         type: 'CommentCreated',
         data: {
            postId:contentId, 
            id:commentId, 
-           content
+           content,
+           status:'pending'
         }
     });
 
@@ -37,7 +38,7 @@ app.post('/posts/:id/comments', async (req, res) => {
 });
 
 app.post('/events',async(req,res)=>{
-    console.log()
+    console.log("Recieved",req.body)
 
     res.send({});
 })
