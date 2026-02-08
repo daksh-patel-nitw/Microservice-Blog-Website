@@ -51,6 +51,7 @@ The system is composed of independent services that communicate **only through e
 * Create comments for posts
 * Store comments per post
 * Track comment status (`pending`, `approved`, `rejected`)
+* Rejects comments with word orange
 * Emit lifecycle events
 
 ### Events Emitted

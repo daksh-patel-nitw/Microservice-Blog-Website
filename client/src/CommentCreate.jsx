@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-export default function CommentCreate({ postId }) {
+export default function CommentCreate({ postId, onCommentCreated }) {
   const [content, setContent] = useState('');
 
   const onSubmit = async (event) => {
@@ -10,6 +10,7 @@ export default function CommentCreate({ postId }) {
       content,
     });
     setContent('');
+    onCommentCreated();
   };
 
   return (
