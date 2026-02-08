@@ -7,3 +7,5 @@
 /eventBus/node_modules
 
 /Moderation/node_modules
+
+skaffold.yaml
